@@ -1,0 +1,23 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+body {
+  @apply dark:text-[#8F8FA6];
+  @apply text-[14px] sm:text-[16px]
+}
+
+
+button {
+  @apply px-4 py-2
+  bg-[#25232E] text-[#C8C5D9]
+  rounded-md
+}
+
+.btn-outline {
+  @apply hover:bg-[#0D0D0E] hover:border hover:border-[#9EE972]
+}
+
+.btn {
+  @apply hover:bg-[#9EE972] hover:text-[#030303]
+}

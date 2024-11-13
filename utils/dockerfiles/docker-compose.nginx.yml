@@ -1,0 +1,11 @@
+services:
+  # MakefileServiceName
+  light-nginx: # Light build, simply copies the `build/` folder that needs to exist before execution. Default.
+    build:
+      context: ../../
+      dockerfile: ./utils/dockerfiles/Dockerfile.nginxbuild
+    labels:
+      - "com.example.description=custom container nginx"
+    ports:
+      -  ${PORT}:80
+    image: ${DOCKERFILE_IMAGE_NAME} 

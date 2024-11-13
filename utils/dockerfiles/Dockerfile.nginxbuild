@@ -1,0 +1,20 @@
+# //Dockerfile.nginxbuild
+# This is a simple dockerfile, that acts as a container and server.
+# Copies the build/ folder. In case it gets modified locally.
+
+# Use an official Node runtime as a parent image
+#FROM nginx
+FROM nginx:alpine
+
+# Set the working directory in the container (optional, as Nginx uses /usr/share/nginx/html by default)
+WORKDIR /usr/share/nginx/html
+
+#Copy build to the working directory
+COPY ../../build ./
+
+COPY ../../utils/nginx/nginx.conf /etc/nginx/conf.d/default.conf
+
+EXPOSE 80
+
+# CMD to start Nginx when the container starts
+CMD ["nginx", "-g", "daemon off;"]
